@@ -1,0 +1,14 @@
+.mainPageContainer {
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+
+
+    .search{
+        background-color: #EFEFF4;
+
+        .searchIcon {
+            color: #8A8A8F;
+        }
+    }
+}
