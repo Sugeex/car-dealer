@@ -2,4 +2,21 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "SFPro", sans-serif;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("/fonts/SFProText-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("/fonts/SFProText-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }

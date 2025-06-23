@@ -1,0 +1,35 @@
+.carsListContainer {
+    margin-top: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .carItem{
+        display: flex;
+        height: 81px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #EFEFF4;
+
+        .infoCar{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 15px;
+            
+            .carName {
+                font-weight: 500;
+            }
+
+            .carPrice {
+                color: #666666;
+            }
+        }
+        .carPhoto {
+            width: 64px;
+            height: 64px;
+            border-radius: 10px;
+        }
+    }
+}
