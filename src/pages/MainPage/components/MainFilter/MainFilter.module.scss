@@ -1,0 +1,216 @@
+.mainFilterContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #EFEFF4;
+
+
+
+    .headerFilter {
+        display: flex;
+        justify-content: space-between;
+        padding: 11px 9px 0px 16px;
+
+        .resetBtn{
+            color: #666666;
+        }
+    }
+
+    .filterCont{
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px 20px 16px;
+        gap: 27px;
+
+        .filterCard{
+            display: flex;
+            gap: 11px;
+            flex-direction: column;
+
+            .titleCard{
+                color: black;
+                font-weight: 500;
+                font-size: 17px;
+            }
+    
+            .rangeInput{
+              padding: 16px;
+              display: flex;
+              flex-direction: column;
+
+              :global {
+                .ant-slider-track{
+                        background-color: #0482FF;
+                    }
+              }
+            }
+
+        }
+
+        .sortOptions{
+            display: flex;
+            flex-direction: column;
+            padding: 11px 16px;
+            font-size: 17px;
+            gap: 5px;
+
+            .option{
+                display: flex;
+                height: 34px;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #EFEFF4;
+
+                :global {
+                    .ant-checkbox-checked .ant-checkbox-inner {
+                        background-color: #4CD964;
+                        border-color: #4CD964;
+                    }
+
+                    .ant-checkbox-inner{
+                        border-radius: 50%;
+                    }
+
+                }
+            }
+        }
+
+        .testDrive{
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            justify-content: space-between;
+            height: 44px;
+
+            :global {
+                .ant-switch-inner-checked {
+                    background-color: #4CD964;
+                    border-color: #4CD964;
+                    color: #4CD964;
+                    
+                }
+                .ant-switch-inner{
+                   padding: 0;
+                }
+
+                :where(.css-dev-only-do-not-override-36gkoj).ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled){
+                    background-color: #4CD964;
+                }
+            }
+        }
+
+        .popularCarsList {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .popularCar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 167px;
+                height: 50px;
+                background-color: white;
+                border-radius: 10px;
+                color: #666666;
+                font-size: 15px;
+
+                &.checked {
+                    color: black;
+                    border: 1px solid #0482FF;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .brandCarHeader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+            .seeAllBtn{
+                color: #666666;
+                font-size: 11px;
+                gap: 2px;
+                padding: 0;
+            }
+        }
+
+        .colorsList {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+
+            -ms-overflow-style: none;     
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+             display: none;              
+            }
+
+            .colorItem{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+
+
+                .checkArrow{
+                    color: white;
+                }
+            }
+        }
+
+        .featuresList{
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+
+            -ms-overflow-style: none;     
+            scrollbar-width: none;
+            
+            &::-webkit-scrollbar {
+                display: none;              
+            }
+
+            .featuresItem{
+                padding: 6px 10px;
+                background-color: white;
+                border-radius: 20px;
+                flex-shrink: 0;
+                font-size: 13px;
+                color: #666666;
+
+                &.selectedF {
+                    background-color: #0482FF;
+                    color: white;
+                }
+            }
+        }
+
+        .ratingBtns{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            display: flex;
+
+            .star{
+                color: #FF9500;
+            }
+        }
+
+        .applyBtn{
+            font-size: 17px;
+            height: 50px;
+        }
+
+    }
+
+}
+

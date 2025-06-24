@@ -3,10 +3,14 @@ import s from "./MainPage.module.scss";
 import { SearchOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import CarsList from "./components/CarsList/CarsList";
+import { useNavigate } from "react-router-dom";
 
 
 const MainPage = () => {
+  
+  const navigate = useNavigate()
   const [activeCategory, setActiveCategory] = useState("all");
+
   return (
     <div className={s.mainPageContainer}>
       <div className={s.headerBtn}>
@@ -16,7 +20,7 @@ const MainPage = () => {
           placeholder="Search"
           prefix={<SearchOutlined className={s.searchIcon} />}
         />
-        <Button type="text" className={s.filterBtn}>Filter</Button>
+        <Button type="text" className={s.filterBtn} onClick={() => navigate("/filter")}>Filter</Button>
       </div>
       <div className={s.filterContainer}>
         <div

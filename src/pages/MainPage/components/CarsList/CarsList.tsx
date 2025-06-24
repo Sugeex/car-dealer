@@ -1,3 +1,4 @@
+import { toAbsoluteUrl } from "../../../../utils/helpers";
 import s from "./CarsList.module.scss";
 
 interface CarsListProps {
@@ -62,7 +63,7 @@ const CarsList = ({activeCategory}: CarsListProps) => {
             <span className={s.carName}>{`${item.brand} ${item.model}`}</span>
             <span className={s.carPrice}>{item.price}</span>
           </div>
-          <img className={s.carPhoto} src={item.image} alt={item.model} />
+          <img className={s.carPhoto} src={toAbsoluteUrl(item.image)} alt={item.model} />
         </div>
       ))}
     </div>
