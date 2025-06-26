@@ -1,4 +1,4 @@
-import { LeftOutlined } from "@ant-design/icons";
+import { GlobalOutlined, LeftOutlined } from "@ant-design/icons";
 import { toAbsoluteUrl } from "../../utils/helpers";
 import s from "./CarDetails.module.scss";
 import { Button, Rate } from "antd";
@@ -54,7 +54,7 @@ const CarDetails = () => {
         <div className={s.priceContainer}>
           <span className={s.price}>$52,000</span>
         </div>
-        
+
         <div className={s.detailFilter}>
           <div
             className={`${s.filterItem} ${
@@ -85,11 +85,18 @@ const CarDetails = () => {
         {activeCategory === "features" && <Features features={featuresMock} />}
         {activeCategory === "photos" && <Photos />}
         <div className={s.footerDetailsContainer}>
-            <div className={s.priceFooterCont}>
-                <span className={s.priceNameF}>Price (Cash)</span>
-                <span className={s.priceF}>$52,000</span>
-            </div>
-            <Button className={s.buyBtnDetails} type="primary">Оставить заявку</Button>
+          <div className={s.priceFooterCont}>
+            <span className={s.priceNameF}>Price (USA)</span>
+            <span className={s.priceF}>$52,000</span>
+          </div>
+          <div className={s.footerBtns}>
+            <Button className={s.linkBtnDetails} type="primary">
+              <GlobalOutlined />
+            </Button>
+            <Button className={s.buyBtnDetails} type="primary">
+              Оставить заявку
+            </Button>
+          </div>
         </div>
       </div>
     </div>

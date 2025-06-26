@@ -74,6 +74,39 @@ const MainFilter = () => {
       </div>
       <div className={s.filterCont}>
         <h1>Filter</h1>
+
+        <div className={s.filterCard}>
+          <div className={s.brandCarHeader}>
+            <span className={s.titleCard}>Car models</span>
+            <Button
+              type="text"
+              className={s.seeAllBtn}
+              onClick={() => setShowAllBrands((prev) => !prev)}
+            >
+              {showAllBrands ? "Show less" : "See all"}
+              {showAllBrands ? <UpOutlined /> : <DownOutlined />}
+            </Button>
+          </div>
+          <div className={s.popularCarsList}>
+            {(showAllBrands
+              ? popularCarsMock
+              : popularCarsMock.slice(0, 8)
+            ).map((item, index) => (
+              <div
+                key={index}
+                className={`${s.popularCar} ${
+                  selectedCar === item && s.checked
+                }`}
+                onClick={() =>
+                  setSelectedCar((prev) => (prev === item ? null : item))
+                }
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className={s.filterCard}>
           <div className={s.filterRangeHeader}>
             <span className={s.titleCard}>Year</span>
@@ -114,37 +147,7 @@ const MainFilter = () => {
           </Card>
         </div>
 
-        <div className={s.filterCard}>
-          <div className={s.brandCarHeader}>
-            <span className={s.titleCard}>Car models</span>
-            <Button
-              type="text"
-              className={s.seeAllBtn}
-              onClick={() => setShowAllBrands((prev) => !prev)}
-            >
-              {showAllBrands ? "Show less" : "See all"}
-              {showAllBrands ? <UpOutlined /> : <DownOutlined />}
-            </Button>
-          </div>
-          <div className={s.popularCarsList}>
-            {(showAllBrands
-              ? popularCarsMock
-              : popularCarsMock.slice(0, 8)
-            ).map((item, index) => (
-              <div
-                key={index}
-                className={`${s.popularCar} ${
-                  selectedCar === item && s.checked
-                }`}
-                onClick={() =>
-                  setSelectedCar((prev) => (prev === item ? null : item))
-                }
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
+        
         
         <div className={s.filterCard}>
           <span className={s.titleCard}>Exterior Color</span>
@@ -185,7 +188,7 @@ const MainFilter = () => {
           </div>
         </div>
         <div className={s.filterCard}>
-          <span className={s.titleCard}>Features</span>
+          <span className={s.titleCard}>Car configuration</span>
           <div className={s.featuresList}>
             {featuresMock.map((item, index) => (
               <div
@@ -219,7 +222,7 @@ const MainFilter = () => {
           </Card>
         </div>
         <div className={s.filterCard}>
-          <span className={s.titleCard}>Complication Rating</span>
+          <span className={s.titleCard}>Configuration rating</span>
           <Radio.Group
             block
             buttonStyle="solid"

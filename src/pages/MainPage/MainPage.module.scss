@@ -1,7 +1,7 @@
 .mainPageContainer {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 10px 16px 16px 16px;
     height: 100vh;
 
     .headerBtn{
@@ -24,36 +24,52 @@
         }
     }
 
-    .filterContainer {
-        margin-top: 10px;
-        gap: 30px;
-        height: 44px;
+    .headerContainer {
         display: flex;
-        overflow-x: auto;
-        font-size: 15px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
 
-        -ms-overflow-style: none;     
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-            display: none;              
-        }
-
-        .filterItem{
-            flex-shrink: 0;
+        .mainFilterBtn{
+            width: 40px;
+            font-size: 18px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #8A8A8F;
-            cursor: pointer;
+        }
 
-            &.active {
-                color: #000;
-                font-weight: 500;
-                border-bottom: 2px solid #0482FF;
+        .filterContainer {
+            gap: 30px;
+            height: 44px;
+            display: flex;
+            overflow-x: auto;
+            font-size: 15px;
+    
+            -ms-overflow-style: none;     
+            scrollbar-width: none;
+    
+            &::-webkit-scrollbar {
+                display: none;              
+            }
+    
+            .filterItem{
+                flex-shrink: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #8A8A8F;
+                cursor: pointer;
+    
+                &.active {
+                    color: #000;
+                    font-weight: 500;
+                    border-bottom: 2px solid #0482FF;
+                }
             }
         }
+
     }
+
 
 
 }
