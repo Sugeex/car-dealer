@@ -1,6 +1,5 @@
-import { Button, Input } from "antd";
+import { Button } from "antd";
 import s from "./MainPage.module.scss";
-import { SearchOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import CarsList from "./components/CarsList/CarsList";
 import { useNavigate } from "react-router-dom";
@@ -14,12 +13,7 @@ const MainPage = () => {
   return (
     <div className={s.mainPageContainer}>
       <div className={s.headerBtn}>
-        <Input
-          className={s.search}
-          allowClear
-          placeholder="Search"
-          prefix={<SearchOutlined className={s.searchIcon} />}
-        />
+      
         <Button type="text" className={s.filterBtn} onClick={() => navigate("/filter")}>Filter</Button>
       </div>
       <div className={s.filterContainer}>
@@ -27,7 +21,7 @@ const MainPage = () => {
           className={`${s.filterItem} ${activeCategory === "all" && s.active}`}
           onClick={() => setActiveCategory("all")}
         >
-          All Categories
+          All models
         </div>
         <div
           className={`${s.filterItem} ${
@@ -35,7 +29,7 @@ const MainPage = () => {
           }`}
           onClick={() => setActiveCategory("sedan")}
         >
-          Sedan
+          1 Series
         </div>
         <div
           className={`${s.filterItem} ${
@@ -43,7 +37,7 @@ const MainPage = () => {
           }`}
           onClick={() => setActiveCategory("convertible")}
         >
-          Convertible
+          2 Series
         </div>
         <div
           className={`${s.filterItem} ${
@@ -51,7 +45,7 @@ const MainPage = () => {
           }`}
           onClick={() => setActiveCategory("hatch")}
         >
-          Hatchback
+          3 Series
         </div>
       </div>
       <CarsList activeCategory={activeCategory} />

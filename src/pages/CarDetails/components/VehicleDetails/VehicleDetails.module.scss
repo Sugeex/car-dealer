@@ -1,0 +1,38 @@
+.specsContainer {
+  font-family: Arial, sans-serif;
+  border: 1px solid #e0e0e0;
+  background-color: #EFEFF4;
+  border-radius: 8px;
+  padding: 8px;
+
+  .specsGrid {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    row-gap: 10px;
+    column-gap: 15px;
+
+    .specRow {
+      grid-column: 1 / -1;
+      display: contents;
+
+      &:not(:last-child)::after {
+        content: '';
+        grid-column: 1 / -1;
+        height: 1px;
+        background-color: #e0e0e0;
+      }
+    }
+
+    .specLabel {
+      color: #666666;
+      font-size: 13px;
+    }
+
+    .specValue {
+      font-size: 13px;
+      word-break: break-word;
+      color: black;
+      text-align: end;
+    }
+  }
+}

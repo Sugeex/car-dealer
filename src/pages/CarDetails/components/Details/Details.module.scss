@@ -1,0 +1,18 @@
+.detailsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .textAboutCar{
+        font-size: 15px;
+
+        .expandBtn{
+            padding: 0;
+        }
+    }
+
+    .detailCollaps{
+        margin-top: 10px;
+    }
+
+}

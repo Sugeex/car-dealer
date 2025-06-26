@@ -27,10 +27,27 @@
             gap: 11px;
             flex-direction: column;
 
+            .filterRangeHeader{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
             .titleCard{
                 color: black;
                 font-weight: 500;
                 font-size: 17px;
+
+
+            }
+            .labelRange{
+                display: flex;
+                gap: 8px;
+
+                >span{
+                    font-size: 11px;
+                    color: #666666;
+                }
             }
     
             .rangeInput{
@@ -101,8 +118,8 @@
 
         .popularCarsList {
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            justify-content: space-between;
+            row-gap: 10px;
             flex-wrap: wrap;
 
             .popularCar{

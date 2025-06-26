@@ -1,0 +1,9 @@
+.photosContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .photosCar{
+        border-radius: 10px;
+    }
+}

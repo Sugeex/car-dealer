@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { toAbsoluteUrl } from "../../../../utils/helpers";
 import s from "./CarsList.module.scss";
 
@@ -49,6 +50,7 @@ const carsMock = [
 ];
 
 const CarsList = ({activeCategory}: CarsListProps) => {
+  const navigate = useNavigate()
 
      const filteredCars =
        activeCategory === "all"
@@ -58,7 +60,7 @@ const CarsList = ({activeCategory}: CarsListProps) => {
   return (
     <div className={s.carsListContainer}>
       {filteredCars.map((item) => (
-        <div key={item.id} className={s.carItem}>
+        <div key={item.id} className={s.carItem} onClick={() => navigate(`/details/${item.id}`)}>
           <div className={s.infoCar}>
             <span className={s.carName}>{`${item.brand} ${item.model}`}</span>
             <span className={s.carPrice}>{item.price}</span>
