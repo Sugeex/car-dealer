@@ -45,9 +45,12 @@
             flex-direction: column;
             gap: 8px;
 
-            .quality{
+            .nameCountry{
                 font-size: 15px;
                 color: #666666;
+                display: flex;
+                align-items: center;
+                gap: 5px;
             }
 
             .mileageRatingContainer{
@@ -74,13 +77,13 @@
         .priceContainer{
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 10px;
 
             .price{
                 font-size: 20px;
                 font-weight: 500;
             }
-            .msrp{
+            .dealerPrice{
                 color: #666666;
                 font-size: 15px;
             }
@@ -176,6 +179,8 @@
                 .priceNameF{
                     color: #666666;
                     font-size: 13px;
+                    display: flex;
+                    align-items: center;
                 }
                 .priceF{
                     font-size: 17px;

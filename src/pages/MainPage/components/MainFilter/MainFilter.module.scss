@@ -11,16 +11,25 @@
         justify-content: space-between;
         padding: 11px 16px 0px 16px;
 
-        .resetBtn{
-            color: #666666;
-        }
+        
     }
 
     .filterCont{
         display: flex;
         flex-direction: column;
         padding: 0 16px 20px 16px;
-        gap: 27px;
+        gap: 15px;
+
+        .filterTitleHeader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .resetBtn{
+            width: 20px;
+            font-size: 18px;
+        }
+        }
 
         .filterCard{
             display: flex;
@@ -51,7 +60,7 @@
             }
     
             .rangeInput{
-              padding: 16px;
+              padding: 10px 16px;
               display: flex;
               flex-direction: column;
 
@@ -126,7 +135,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 160px;
+                width: 48%;
                 height: 50px;
                 background-color: white;
                 border-radius: 10px;
@@ -170,7 +179,7 @@
             .colorItem{
                 width: 40px;
                 height: 40px;
-                border-radius: 50%;
+                border-radius: 10px;
                 border: 2px solid white;
                 display: flex;
                 justify-content: center;
@@ -182,6 +191,11 @@
                     color: white;
                 }
             }
+        }
+
+        .editBtn{
+            padding: 0;
+            font-size: 15px;
         }
 
         .featuresList{
@@ -197,9 +211,9 @@
             }
 
             .featuresItem{
-                padding: 6px 10px;
+                padding: 10px;
                 background-color: white;
-                border-radius: 20px;
+                border-radius: 10px;
                 flex-shrink: 0;
                 font-size: 13px;
                 color: #666666;
@@ -229,5 +243,23 @@
 
     }
 
+}
+
+.modalCarOptionContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 250px;
+    overflow-y: auto;
+
+    .modalCarOption{
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .selectedModalItem{
+        background-color: #0482FF;
+        color: white;
+    }
 }
 

@@ -2,13 +2,14 @@ import {
   CheckOutlined,
   DownOutlined,
   LeftOutlined,
+  RollbackOutlined,
   StarFilled,
   UpOutlined,
 } from "@ant-design/icons";
 import s from "./MainFilter.module.scss";
 import { useNavigate } from "react-router-dom";
 import Card from "../../../../components/Card/Card";
-import { Button, Radio, Slider } from "antd";
+import { Button, Modal, Radio, Slider } from "antd";
 import { useState } from "react";
 
 const popularCarsMock = [
@@ -54,7 +55,8 @@ const MainFilter = () => {
 
   const [selectedYear, setSelectedYear] = useState([1929, 2025]);
   const [selectedMileage, setSelectedMileage] = useState([0, 1000000]);
-  const [selectedPrice, setSelectedPrice] = useState([0, 1000000])
+  const [selectedPrice, setSelectedPrice] = useState([0, 1000000]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -70,11 +72,15 @@ const MainFilter = () => {
     <div className={s.mainFilterContainer}>
       <div className={s.headerFilter}>
         <LeftOutlined onClick={() => navigate(-1)} />
-        <span className={s.resetBtn}>Reset</span>
+        {/* <span className={s.resetBtn}>Reset</span> */}
       </div>
       <div className={s.filterCont}>
-        <h1>Filter</h1>
-
+        <div className={s.filterTitleHeader}>
+          <h1>Filter</h1>
+          <Button className={s.resetBtn}>
+            <RollbackOutlined />
+          </Button>
+        </div>
         <div className={s.filterCard}>
           <div className={s.brandCarHeader}>
             <span className={s.titleCard}>Car models</span>
@@ -142,13 +148,11 @@ const MainFilter = () => {
               range
               defaultValue={[0, 1000000]}
               className={s.slider}
-              onChange={(e)=>setSelectedMileage(e)}
+              onChange={(e) => setSelectedMileage(e)}
             />
           </Card>
         </div>
 
-        
-        
         <div className={s.filterCard}>
           <span className={s.titleCard}>Exterior Color</span>
           <div className={s.colorsList}>
@@ -188,7 +192,10 @@ const MainFilter = () => {
           </div>
         </div>
         <div className={s.filterCard}>
-          <span className={s.titleCard}>Car configuration</span>
+          <div className={s.filterTitleHeader}>
+            <span className={s.titleCard}>Car configuration</span>
+            <Button className={s.editBtn} onClick={() => setIsModalOpen(true)} type="link">Edit</Button>
+          </div>
           <div className={s.featuresList}>
             {featuresMock.map((item, index) => (
               <div
@@ -250,6 +257,21 @@ const MainFilter = () => {
           Apply Filters
         </Button>
       </div>
+      <Modal
+      centered
+      title={"Choice car configuration"}
+      open={isModalOpen}
+      onOk={() => setIsModalOpen(false)}
+      onCancel={() => setIsModalOpen(false)}
+      >
+        <div className={s.modalCarOptionContainer}>
+            {featuresMock.map((item, index)=>(
+              <div onClick={() => toggleFeature(item)} key={index} className={`${s.modalCarOption} ${selectedFeatures.includes(item) && s.selectedModalItem}`}>
+                {item}
+              </div>
+            ))}
+        </div>
+      </Modal>
     </div>
   );
 };

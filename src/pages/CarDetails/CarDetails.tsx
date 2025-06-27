@@ -7,6 +7,7 @@ import { useState } from "react";
 import Details from "./components/Details/Details";
 import Features from "./components/Features/Features";
 import Photos from "./components/Photos/Photos";
+import ReactCountryFlag from "react-country-flag";
 
 const CarDetails = () => {
   const [activeCategory, setActiveCategory] = useState("details");
@@ -43,16 +44,17 @@ const CarDetails = () => {
       </div>
       <div className={s.detailsContent}>
         <div className={s.titleCar}>
-          <span className={s.quality}>13-12-2021</span>
+          <span className={s.nameCountry}>
+            Canada <ReactCountryFlag countryCode="CA" svg />
+          </span>
           <h2>BMW X7 Xdrive40i g07</h2>
           <div className={s.mileageRatingContainer}>
-            <span>60 000 mi.</span>
-            <div className={s.dot}></div>
             <Rate className={s.rating} disabled defaultValue={4} />
           </div>
         </div>
         <div className={s.priceContainer}>
           <span className={s.price}>$52,000</span>
+          <span className={s.dealerPrice}>(Dealer Price)</span>
         </div>
 
         <div className={s.detailFilter}>
@@ -86,7 +88,15 @@ const CarDetails = () => {
         {activeCategory === "photos" && <Photos />}
         <div className={s.footerDetailsContainer}>
           <div className={s.priceFooterCont}>
-            <span className={s.priceNameF}>Price (USA)</span>
+            <span className={s.priceNameF}>
+              Price (in Poti{" "}
+              <ReactCountryFlag
+                style={{ marginLeft: "3px" }}
+                countryCode="GE"
+                svg
+              />
+              )
+            </span>
             <span className={s.priceF}>$52,000</span>
           </div>
           <div className={s.footerBtns}>

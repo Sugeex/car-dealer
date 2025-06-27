@@ -1,9 +1,9 @@
 import s from "./Details.module.scss";
 import VehicleDetails from "../VehicleDetails/VehicleDetails";
 const carSpecs = {
-    country: 'Canada',
+    productionDate: '13-12-2021',
+    mileage: "60 000 mi",
     drive: 'AWD',
-    model: 'GV60',
     exteriorColor: 'Black',
     interiorColor: 'Brown',
     body: 'SUV',

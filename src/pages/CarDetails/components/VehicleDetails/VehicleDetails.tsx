@@ -2,9 +2,9 @@ import s from "./VehicleDetails.module.scss"
 
 interface VehicleDetailsProps {
   specs: {
-    country: string;
+    productionDate: string;
+    mileage: string;
     drive: string;
-    model: string;
     exteriorColor: string;
     interiorColor: string;
     body: string;
@@ -19,18 +19,18 @@ const VehicleDetails = ({specs}:VehicleDetailsProps) => {
       <div className={s.specsGrid}> 
 
         <div className={s.specRow}>
-          <div className={s.specLabel}>Country</div>
-          <div className={s.specValue}>{specs.country}</div>
+          <div className={s.specLabel}>Production Date</div>
+          <div className={s.specValue}>{specs.productionDate}</div>
+        </div>
+
+        <div className={s.specRow}>
+          <div className={s.specLabel}>Mileage</div>
+          <div className={s.specValue}>{specs.mileage}</div>
         </div>
 
         <div className={s.specRow}>
           <div className={s.specLabel}>Drive</div>
           <div className={s.specValue}>{specs.drive}</div>
-        </div>
-        
-        <div className={s.specRow}>
-          <div className={s.specLabel}>Model</div>
-          <div className={s.specValue}>{specs.model}</div>
         </div>
         
         <div className={s.specRow}>
