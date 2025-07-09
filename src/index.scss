@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "SFPro", sans-serif;
+  font-family: "LT-Amber-Ext", sans-serif;
 }
 
 body {
@@ -14,17 +14,30 @@ body {
   }
 
 @font-face {
-  font-family: "SFPro";
-  src: url("/fonts/SFProText-Regular.ttf") format("truetype");
+  font-family: "LT-Amber-Ext";
+  src: url("/fonts/LT_Amber_Ext.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
+}  
 @font-face {
-  font-family: "SFPro";
-  src: url("/fonts/SFProText-Medium.ttf");
+  font-family: "LT-Amber-Ext";
+  src: url("/fonts/LT_Amber_Ext_Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-}
+}  
+@font-face {
+  font-family: "LT-Amber-Ext";
+  src: url("/fonts/LT_Amber_Ext_Demibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}  
+@font-face {
+  font-family: "LT-Amber-Ext";
+  src: url("/fonts/LT_Amber_Ext_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}  

@@ -7,3 +7,7 @@ export function toAbsoluteUrl(pathname: string): string {
     return pathname;
   }
 }
+
+export const formatNumber = (num: string | number) => {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}

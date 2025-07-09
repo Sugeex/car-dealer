@@ -1,8 +1,9 @@
 .mainPageContainer {
     display: flex;
     flex-direction: column;
-    padding: 10px 16px 16px 16px;
+    // padding: 10px 16px 16px 16px;
     height: 100vh;
+    background-color: #F4F4F4;
 
     .headerBtn{
         display: flex;
@@ -10,14 +11,6 @@
         justify-content: center;
         gap: 8px;
 
-        .search{
-            background-color: #EFEFF4;
-            height: 36px;
-    
-            .searchIcon {
-                color: #8A8A8F;
-            }
-        }
         .filterBtn {
             color: #666666;
             font-size: 17px;
@@ -27,23 +20,18 @@
     .headerContainer {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         gap: 20px;
-
-        .mainFilterBtn{
-            width: 40px;
-            font-size: 18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        flex-direction: column;
+        background-color: #FFFFFF;
+        padding: 16px;
+        
 
         .filterContainer {
-            gap: 15px;
-            height: 44px;
+            gap: 8px;
+            
             display: flex;
             overflow-x: auto;
-            font-size: 15px;
+            font-size: 14px;
     
             -ms-overflow-style: none;     
             scrollbar-width: none;
@@ -57,15 +45,57 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: #8A8A8F;
+                color: #000;
+                font-weight: 500;
                 cursor: pointer;
+                background-color: #E9EDEE;
+                border-radius: 60px;
+                padding: 11px 12px;
+                gap: 6px;
+                height: 36px;
     
                 &.active {
-                    color: #000;
-                    font-weight: 500;
-                    border-bottom: 2px solid #0482FF;
+                    color: #fff;
+                    background-color: #000;
+                }
+
+                .modalIcon{
+                    display: flex;
+                    justify-content: center;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    overflow: hidden;
+                    padding-left: 20px;
+
+                    >img{
+                        object-fit: contain;
+                    }
                 }
             }
+        }
+
+        .totalFilterContainer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 19px;
+
+            .total{
+                font-weight: 500;
+            }
+            .amount{
+                font-weight: 700;
+            }
+
+            .mainFilterBtn{
+            width: 40px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         }
 
     }
